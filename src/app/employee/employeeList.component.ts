@@ -29,7 +29,19 @@ export class EmployeeListComponent{
         ];
     }
 
+    getTotalEmployeesCount(): number{
+        return this.employees.length;
+    }
+
     
+    getMaleEmployeesCount(): number{
+        return this.employees.filter(e => e.gender === 'Male' ).length;
+    }
+
+    
+    getFemaleEmployeesCount(): number{
+        return this.employees.filter(e => e.gender === 'Female' ).length;
+    }
     // trackByEmpCode(index:number, employee:any): String{
     //     return employee.code;
     // }
