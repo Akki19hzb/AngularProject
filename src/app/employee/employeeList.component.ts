@@ -8,7 +8,7 @@ import {Component} from '@angular/core';
 
 export class EmployeeListComponent{
     employees: any[];
-
+    selectedEmployeeCountRadioButton: string='All';
     constructor(){
         this.employees= [
             {
@@ -41,6 +41,10 @@ export class EmployeeListComponent{
     
     getFemaleEmployeesCount(): number{
         return this.employees.filter(e => e.gender === 'Female' ).length;
+    }
+
+    onEmployeeCountRadioChange(selectedRadioButtonValue: string):void{
+        this.selectedEmployeeCountRadioButton=selectedRadioButtonValue;
     }
     // trackByEmpCode(index:number, employee:any): String{
     //     return employee.code;
